@@ -32,8 +32,8 @@ export function Newsletter({ className }: NewsletterProps) {
   }
 
   return (
-    <Card className={`bg-zinc-900 border-orange-400 ${className}`}>
-      <CardContent className="p-8">
+    <Card className={`bg-zinc-900 border-orange-400 rounded-3xl ${className}`}>
+      <CardContent className="p-6">
         <div className="text-center">
           <motion.div
             initial={{ scale: 0 }}
