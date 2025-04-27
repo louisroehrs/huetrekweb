@@ -101,7 +101,9 @@ export default function App() {
                   <dd>Nothing will convince your friends that you are a trekkie more than this app!</dd>
                   <div className="pb-12"></div>
                 </dl>
-                <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-orange-400 pr-4 text-right text-black"></div>
+                <a href="#features" className="hover:text-white transition">
+                  <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-orange-400 pr-4 text-right text-black"></div>
+                  </a>
               </ul>
           </div>
         </div>
@@ -121,7 +123,9 @@ export default function App() {
                 <Screenshot imageName={colorsliders} />
                 <Screenshot imageName={colorspectrum} />
               </div>
-              <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-blue-400 pr-4 text-right text-black"></div>
+              <a href="#demo" className="hover:text-white transition">
+                <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-blue-400 pr-4 text-right text-black"></div>
+              </a>
             </div>
           </div>
         </div>
