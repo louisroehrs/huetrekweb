@@ -105,8 +105,9 @@ export default function App() {
                   <dd>Have an extra iPhone or tablet?  Load them up with this app, and control your house from a Star Trek wall panel or desk panel!</dd>
                   <dt>Cement your Trek nerd reputation!</dt>
                   <dd>Nothing will convince your friends that you are a trekkie more than this app!</dd>
-                  <div className="pb-12"></div>
                 </dl>
+                <div className="pb-12"></div>
+                <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-orange-400 pr-4 text-right text-black"></div>
               </ul>
           </div>
         </div>
