@@ -120,24 +120,25 @@
 
 dt {
   color: black;
-  background-color: brown;
-  font-size: 20;
-  border-radius: 40px 0px 0 0;
+  background-color: rgb(244, 134, 134);
+  border-radius: 0 40px 0 0;
   border-bottom-radius: 20px;
-  padding: 0px 0px 0px 40px;
+  padding: 4px 0px 4px 40px;
   font-family: "Okuda";
-  font-size: 40px;
+  font-size: 30px;
   text-transform: uppercase;
-  margin-left: 20px
+  margin-left: 20px;
+  line-height: 20px;
 }
 
 dd {
   color: cyan;
-  border-width: 0px 0px 10px 20px;
-  border-color: brown;
+  border-width: 0px 20px 10px 0px;
+  border-color:rgb(244, 134, 134);
   padding: 10px;
   padding-left: 20px;
-  border-radius: 0px 0px 0px 20px;
+  border-radius: 0px 0px 20px 0px;
   margin-bottom: 4px;
-  margin-left: 20px
+  margin-left: 20px;
+  margin-top: 4px;
 }

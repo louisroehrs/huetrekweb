@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 import { Screenshot } from "@/components/ui/screenshot";
 import { Newsletter } from "@/components/ui/newsletter";
-import { Sparkles, Lightbulb, SwitchCamera, Star, Volume2, VolumeX } from "lucide-react";
-import { motion } from "framer-motion";
-import reactLogo from "@/assets/react.svg";
+import { PrivacyPolicy } from "@/components/ui/privacy-policy";
+import { Volume2, VolumeX } from "lucide-react";
 import pairing from "@/assets/new/pairing.png";
 import lights from "@/assets/new/lights.png";
 import groups from "@/assets/new/groups.png";
@@ -16,6 +14,8 @@ import colorspectrum from "@/assets/new/colorspectrum.png";
 import downloadiOS from "@/assets/download-on-the-app-store.svg";
 import hueTrekLogo from "@/assets/hueTrekLogo.png";
 import hueTrekTitle from "@/assets/final-frontier-old-style.png";
+import hueTrekTitleBlack from "@/assets/huetrek-title-black.png";
+import { Support } from "./components/ui/support";
 
 export default function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -26,15 +26,16 @@ export default function App() {
       <div className="absolute inset-0 z-0 opacity-20 animate-pulse pointer-events-none">
         <div className="w-full h-full bg-gradient-to-br from-purple-800 to-indigo-900 blur-3xl"></div>
       </div>
-
+    <a href="#top"></a>
       {/* Navigation Bar - Starfleet Style */}
-      <nav className="relative z-10 bg-zinc-900 border-b border-orange-400 shadow-md text-orange-300 text-sm uppercase font-semibold tracking-wider">
+      <nav className="relative z-10 bg-zinc-900 border-b border-orange-400 shadow-md text-orange-300 text-sm uppercase font-semibold tracking-wider fixed top-0 w-full">
         <div className="flex justify-between items-center px-6 py-3">
           <img src={hueTrekTitle} alt="HueTrek" className="w-32" />
           <div className="space-x-6">
             <a href="#features" className="hover:text-white transition">Features</a>
             <a href="#demo" className="hover:text-white transition">Demo</a>
-            <a href="#newsletter" className="hover:text-white transition">Join</a>
+            <a href="#support" className="hover:text-white transition">Support</a>
+            <a href="#privacy" className="hover:text-white transition">Privacy</a>
           </div>
       
           <div className="flex items-center">
@@ -80,8 +81,13 @@ export default function App() {
         {/* Features Section */}
         <div id="features" className="pt-2 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-              <ul class="border-t border-l border-b rounded-l-3xl border-orange-400 bg-black border-l-8">
-                <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-orange-400 mb-12 pr-4 text-right text-black">FEATURES</h2>
+              <ul className="border-t border-l border-b rounded-l-3xl border-orange-400 bg-black border-l-8">
+              <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-orange-400 mb-12 pr-4 text-right text-black">
+                <div className="flex items-center justify-between">
+                  <a href="#top"><img src={hueTrekTitleBlack} alt="HueTrek Top" className="w-32"/></a>
+                  <div>FEATURES</div>
+                </div>
+              </h2>
                 <dl>
                   <dt>Multiple Bridges</dt>
                   <dd>Connect to one or more bridges with the same app.  You can set up bridges in different houses and connect as needed when you move between houses with two taps.</dd>
@@ -101,9 +107,6 @@ export default function App() {
                   <dd>Nothing will convince your friends that you are a trekkie more than this app!</dd>
                   <div className="pb-12"></div>
                 </dl>
-                <a href="#features" className="hover:text-white transition">
-                  <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-orange-400 pr-4 text-right text-black"></div>
-                  </a>
               </ul>
           </div>
         </div>
@@ -112,8 +115,13 @@ export default function App() {
         {/* Screenshots Section */}
         <div id="demo" className="py-2 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div class="border-t border-l border-b rounded-l-3xl border-blue-400 bg-black border-l-8">
-              <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-blue-400 mb-12 pr-4 text-right text-black">DEMO</h2>
+            <div className="border-t border-l border-b rounded-l-3xl border-blue-400 bg-black border-l-8">
+              <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-blue-400 mb-12 pr-4 text-right text-black">
+                <div className="flex items-center justify-between">
+                  <a href="#top"><img src={hueTrekTitleBlack} alt="HueTrek Top" className="w-32"/></a>
+                  <div>DEMO</div>
+                </div>
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 pl-4 pb-8">
                 <Screenshot imageName={pairing} />
                 <Screenshot imageName={lights} />
@@ -123,19 +131,22 @@ export default function App() {
                 <Screenshot imageName={colorsliders} />
                 <Screenshot imageName={colorspectrum} />
               </div>
-              <a href="#demo" className="hover:text-white transition">
-                <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-blue-400 pr-4 text-right text-black"></div>
-              </a>
+              <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-blue-400 pr-4 text-right text-black"></div>
             </div>
           </div>
         </div>
 
 
         {/* Newsletter Section */}
-        <div id="join" className="pb-2 px-4 sm:px-6 lg:px-8">
+        <div id="newsletter" className="pb-2 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <div class="border-t border-l border-b rounded-l-3xl border-teal-400 bg-black border-l-8">
-              <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-teal-400 mb-12 pr-4 text-right text-black">JOIN OUR NEWSLETTER</h2>
+            <div className="border-t border-l border-b rounded-l-3xl border-teal-400 bg-black border-l-8">
+              <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-teal-400 mb-12 pr-4 text-right text-black">
+                <div className="flex items-center justify-between">
+                  <a href="#top"><img src={hueTrekTitleBlack} alt="HueTrek Top" className="w-32"/></a>
+                  <div>JOIN OUR NEWSLETTER</div>
+                </div>
+              </h2>
               <div id="newsletter" className="py-4 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-3xl mx-auto pl-4">
                   <Newsletter/>
@@ -150,8 +161,17 @@ export default function App() {
             <p className="text-orange-400">&copy; {new Date().getFullYear()} HueTrek. Engage your home lighting.</p>
           </div>
         </div>
+
+        {/* Privacy Policy Section */}
+        <div id="privacy" className="pb-2 px-4 sm:px-6 lg:px-8">
+          <PrivacyPolicy />
+        </div>
+
+        {/* Support Section */}
+        <div id="support" className="pb-2 px-4 sm:px-6 lg:px-8">
+          <Support />
+        </div>
       </div>
     </div>
-    );
+  );
 }
-   
