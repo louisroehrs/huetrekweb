@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Screenshot } from "@/components/ui/screenshot";
 import { Newsletter } from "@/components/ui/newsletter";
 import { PrivacyPolicy } from "@/components/ui/privacy-policy";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Menu, X } from "lucide-react";
 import pairing from "@/assets/new/pairing.png";
 import lights from "@/assets/new/lights.png";
 import groups from "@/assets/new/groups.png";
@@ -19,6 +19,7 @@ import { Support } from "./components/ui/support";
 
 export default function App() {
   const [soundEnabled, setSoundEnabled] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-black text-white font-sans relative overflow-hidden">
@@ -31,13 +32,23 @@ export default function App() {
       <nav className="relative z-10 bg-zinc-900 border-b border-orange-400 shadow-md text-orange-300 text-sm uppercase font-semibold tracking-wider fixed top-0 w-full">
         <div className="flex justify-between items-center px-6 py-3">
           <img src={hueTrekTitle} alt="HueTrek" className="w-32" />
-          <div className="space-x-6">
+          
+          {/* Mobile menu button */}
+          <button 
+            className="md:hidden text-orange-300 hover:text-white transition"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:flex space-x-6">
             <a href="#features" className="hover:text-white transition">Features</a>
             <a href="#demo" className="hover:text-white transition">Demo</a>
             <a href="#support" className="hover:text-white transition">Support</a>
             <a href="#privacy" className="hover:text-white transition">Privacy</a>
           </div>
-      
+      {/*
           <div className="flex items-center">
             <div className="w-14 h-10 bg-orange-400 rounded-full z-20">
               <Button
@@ -49,7 +60,17 @@ export default function App() {
               </Button>
             </div>
           </div>
-        </div>  
+          */}
+        </div>
+        {/* Mobile navigation menu */}
+        <div className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'} bg-zinc-900 border-t border-orange-400`}>
+          <div className="flex flex-col space-y-4 px-6 py-4">
+            <a href="#features" className="hover:text-white transition" onClick={() => setIsMenuOpen(false)}>Features</a>
+            <a href="#demo" className="hover:text-white transition" onClick={() => setIsMenuOpen(false)}>Demo</a>
+            <a href="#support" className="hover:text-white transition" onClick={() => setIsMenuOpen(false)}>Support</a>
+            <a href="#privacy" className="hover:text-white transition" onClick={() => setIsMenuOpen(false)}>Privacy</a>
+          </div>
+        </div>
       </nav>
       <div className="relative z-10">
         {/* Hero Section */}
