@@ -89,7 +89,7 @@ export default function App() {
               <div>Kids love it, and they can't change the configuration.</div>
               <div className="pb-10"></div>
               <div className="text-orange-400 pb-4">Available Now!</div>
-              <img src={downloadiOS} alt="Download on the App Store" />
+              <a href="https://apps.apple.com/us/app/huetrek/id6745201555"><img src={downloadiOS} alt="Download on the App Store" /></a>
             </div>
             <div/><div/><div/>
             <div>
@@ -135,7 +135,8 @@ export default function App() {
 
 
         {/* Screenshots Section */}
-        <div id="demo" className="py-2 px-4 sm:px-6 lg:px-8">
+      <div id="demo" className="py-2 px-4 sm:px-6 lg:px-8">
+      <a href="https://apps.apple.com/us/app/huetrek/id6745201555">
           <div className="max-w-7xl mx-auto">
             <div className="border-t border-l border-b rounded-l-3xl border-blue-400 bg-black border-l-8">
               <h2 className="text-6xl font-[Okuda] rounded-tl-2xl font-bold text-center bg-blue-400 mb-12 pr-4 text-right text-black">
@@ -155,8 +156,9 @@ export default function App() {
               </div>
               <div className="text-6xl font-[Okuda] rounded-bl-2xl font-bold text-center h-6 bg-blue-400 pr-4 text-right text-black"></div>
             </div>
-          </div>
-        </div>
+      </div>
+      </a>
+      </div>
 
 
         {/* Newsletter Section */}
