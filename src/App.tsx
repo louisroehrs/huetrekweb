@@ -88,7 +88,7 @@ export default function App() {
               <div>HueTrek brings a Star Trek-inspired interface to your Philips Hue smart lighting system. </div>
               <div>Kids love it, and they can't change the configuration.</div>
               <div className="pb-10"></div>
-              <div className="text-orange-400 pb-4">Coming Spring 2025!</div>
+              <div className="text-orange-400 pb-4">Available Now!</div>
               <img src={downloadiOS} alt="Download on the App Store" />
             </div>
             <div/><div/><div/>
